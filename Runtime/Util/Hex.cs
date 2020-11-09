@@ -14,7 +14,7 @@ namespace Acorn {
 
         public Hex(int q, int r) {
             this.q = q;
-            this.r = r;g
+            this.r = r;
         }
 
         public Vector2 ToPlanar(float radius = .5f) {

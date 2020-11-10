@@ -1,0 +1,15 @@
+{
+    "name": "Acorn.Editor",
+    "references": [
+        "GUID:ee351b7d5093f594784f8e97e88f6af4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

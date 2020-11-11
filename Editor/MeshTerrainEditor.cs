@@ -3,8 +3,8 @@ using UnityEditor;
 
 namespace Acorn {
 
-    [CustomEditor(typeof(CellTerrain))]
-    public class CellTerrainEditor : Editor {
+    [CustomEditor(typeof(MeshTerrain))]
+    public class MeshTerrainEditor : Editor {
 
         static int DANGEROUS_PRESS_COUNT = 5;
         static string[] tileBrushLabels = new string[] { "Delete", "R", "G", "B" };
@@ -15,9 +15,9 @@ namespace Acorn {
 
         int clearPressed = 0;
 
-        CellTerrain GetSelectedTerrain() {
+        MeshTerrain GetSelectedTerrain() {
             var go = Selection.activeGameObject;
-            var terrain = go?.GetComponent<CellTerrain>();
+            var terrain = go?.GetComponent<MeshTerrain>();
             return terrain;
         }
 
@@ -27,7 +27,7 @@ namespace Acorn {
         }
 
         void OnSceneGUI() {
-            CellTerrain terrain = GetSelectedTerrain();
+            MeshTerrain terrain = GetSelectedTerrain();
             if (!terrain || !brushEnabled) {
                 return;
             }
@@ -60,7 +60,7 @@ namespace Acorn {
             DrawBrushDisc(terrain);
         }
 
-        void UpdateBrushPos(CellTerrain terrain) {
+        void UpdateBrushPos(MeshTerrain terrain) {
             var tr = terrain.transform;
             var plane = new Plane(tr.rotation * Vector3.back, tr.position);
             var pos = terrain.transform.InverseTransformPoint(GetMousePosOnPlane(plane));
@@ -72,21 +72,21 @@ namespace Acorn {
             brushPos = hex;
         }
 
-        void DoPaint(CellTerrain terrain) {
+        void DoPaint(MeshTerrain terrain) {
             clearPressed = 0;
             Undo.RecordObject(terrain, "Paint cells");
             terrain.AddCell(brushPos, (byte)brushMode);
             terrain.Generate();
         }
 
-        void DoClear(CellTerrain terrain) {
+        void DoClear(MeshTerrain terrain) {
             clearPressed = 0;
             Undo.RecordObject(terrain, "Clear cells");
             terrain.Clear();
             terrain.Generate();
         }
 
-        void DrawBrushDisc(CellTerrain terrain) {
+        void DrawBrushDisc(MeshTerrain terrain) {
             Handles.color = GetColor();
             var hexPos = brushPos.ToPlanar(terrain.settings.radius).WithZ(0);
             var pos = terrain.transform.TransformPoint(hexPos);

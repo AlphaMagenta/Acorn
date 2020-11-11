@@ -5,19 +5,19 @@ using UnityEngine;
 
 namespace Acorn {
 
-    public class CellTerrainBuilder {
+    public class MeshTerrainBuilder {
 
-        private CellTerrainSettings settings;
-        private CellTerrainBuffer buffer;
+        private MeshTerrainSettings settings;
+        private TerrainBuffer buffer;
 
         private Mesh mainMesh;
         private Mesh collisionMesh;
         private MeshBuffer mainBuf;
         private MeshBuffer collisionBuf;
 
-        public CellTerrainBuilder(
-            CellTerrainBuffer buffer,
-            CellTerrainSettings settings
+        public MeshTerrainBuilder(
+            TerrainBuffer buffer,
+            MeshTerrainSettings settings
         ) {
             this.buffer = buffer;
             this.settings = settings;

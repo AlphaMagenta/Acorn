@@ -4,7 +4,7 @@ namespace Acorn {
 
     [System.Serializable]
     [PreferBinarySerialization]
-    public class CellTerrainBuffer {
+    public class TerrainBuffer {
 
         [SerializeField]
         [HideInInspector]

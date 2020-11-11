@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Acorn {
 
     [System.Serializable]
-    public class CellTerrainSettings {
+    public class MeshTerrainSettings {
         public float radius = .5f;
         public float depth = .5f;
         public float edgeVertsInset = .5f;

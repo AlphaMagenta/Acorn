@@ -6,10 +6,10 @@ using UnityEngine;
 namespace Acorn {
 
     [ExecuteInEditMode]
-    public class CellTerrain : MeshGenerator {
+    public class MeshTerrain : MeshGenerator {
 
-        public CellTerrainSettings settings;
-        public CellTerrainBuffer buffer = new CellTerrainBuffer();
+        public MeshTerrainSettings settings;
+        public TerrainBuffer buffer = new TerrainBuffer();
 
         private MeshCollider meshCollider;
         private Mesh collisionMesh;
@@ -28,7 +28,7 @@ namespace Acorn {
         }
 
         protected override void DoGenerate() {
-            var builder = new CellTerrainBuilder(buffer, settings);
+            var builder = new MeshTerrainBuilder(buffer, settings);
             builder.GenerateMeshes();
             mainMesh = builder.GetMainMesh();
             collisionMesh = builder.GetCollisionMesh();

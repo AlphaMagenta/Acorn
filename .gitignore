@@ -1,0 +1,8 @@
+*.csproj
+*.csproj.meta
+obj/
+obj.meta
+Temp/
+Temp.meta
+Debug/
+Debug.meta

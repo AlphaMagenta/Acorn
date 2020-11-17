@@ -9,7 +9,7 @@ namespace Acorn {
     public class MeshTerrain : MeshGenerator {
 
         public MeshTerrainSettings settings;
-        public TerrainBuffer buffer = new TerrainBuffer();
+        public ByteBuffer buffer = new ByteBuffer();
 
         private MeshCollider meshCollider;
         private Mesh collisionMesh;

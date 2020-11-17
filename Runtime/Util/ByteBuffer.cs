@@ -4,7 +4,7 @@ namespace Acorn {
 
     [System.Serializable]
     [PreferBinarySerialization]
-    public class TerrainBuffer {
+    public class ByteBuffer {
 
         [SerializeField]
         [HideInInspector]
@@ -21,8 +21,8 @@ namespace Acorn {
             }
         }
 
-        public byte Get(Vector2Int coords) {
-            return Get(coords.x, coords.y);
+        public byte Get(Vector2Int xy) {
+            return Get(xy.x, xy.y);
         }
 
         public byte Get(int x, int y) {
@@ -37,6 +37,10 @@ namespace Acorn {
                 return;
             }
             buffer[x + y * size] = data;
+        }
+
+        public void Set(Vector2Int xy, byte data) {
+            Set(xy.x, xy.y, data);
         }
 
         public bool Contains(int x, int y) {

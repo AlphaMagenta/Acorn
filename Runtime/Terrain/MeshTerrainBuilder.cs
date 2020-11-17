@@ -8,7 +8,7 @@ namespace Acorn {
     public class MeshTerrainBuilder {
 
         private MeshTerrainSettings settings;
-        private TerrainBuffer buffer;
+        private ByteBuffer buffer;
 
         private Mesh mainMesh;
         private Mesh collisionMesh;
@@ -16,7 +16,7 @@ namespace Acorn {
         private MeshBuffer collisionBuf;
 
         public MeshTerrainBuilder(
-            TerrainBuffer buffer,
+            ByteBuffer buffer,
             MeshTerrainSettings settings
         ) {
             this.buffer = buffer;

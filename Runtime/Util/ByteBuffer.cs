@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Acorn {
 
@@ -49,6 +50,15 @@ namespace Acorn {
 
         public void Clear() {
             _buffer = new byte[size * size];
+        }
+
+        // Traverse in row-major order
+        public IEnumerable<Vector2Int> Traverse() {
+            for (int y = 0; y < size; y++) {
+                for (int x = 0; x < size; x++) {
+                    yield return new Vector2Int(x, y);
+                }
+            }
         }
 
     }

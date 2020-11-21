@@ -55,7 +55,7 @@ namespace Acorn {
                     p.radius = Mathf.Lerp(p1.radius, p2.radius, t01);
                     p.color = Color.Lerp(p1.color, p2.color, t01);
                     // p.color = p1.color;
-                    p.t = t;
+                    // p.t = t;
                     // Calc next rotation
                     // Minimal twist algorithm: take initial ring rotation aligned with first tangent,
                     // then rotate every ring with a minimal angle between two tangents, around

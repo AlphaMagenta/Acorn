@@ -16,7 +16,7 @@ namespace Acorn {
         public Vector3 tangent;
         public Quaternion rot;
         public float length;
-        public float t;
+        // public float t;
 
         // Arithmetics
         public static Vector3 operator +(CurvePoint a, CurvePoint b) => a.pos + b.pos;

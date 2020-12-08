@@ -44,7 +44,7 @@ namespace Acorn {
             Set(xy.x, xy.y, data);
         }
 
-        public bool Contains(int x, int y) {
+        public bool IsWithinBounds(int x, int y) {
             return x >= 0 && y >= 0 && x < size && y < size;
         }
 

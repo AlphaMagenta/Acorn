@@ -212,6 +212,11 @@ namespace Acorn {
             return (data & 0b0011) != 0;
         }
 
+        bool IsCellInBounds(Hex hex) {
+            var offset = hex.ToOffset();
+            return buffer.IsWithinBounds(offset.x, offset.y);
+        }
+
         Color GetColor(byte data) {
             var b = data & 0b0011;
             switch (b) {
@@ -223,7 +228,10 @@ namespace Acorn {
         }
 
         IEnumerable<int> GetVacantDirs(Hex hex) {
-            return Hex.DIRECTIONS.Where(dir => !ContainsCell(hex.GetNeighbour(dir)));
+            return Hex.DIRECTIONS.Where(dir => {
+                var neighbour = hex.GetNeighbour(dir);
+                return /* IsCellInBounds(neighbour) && */ !ContainsCell(neighbour);
+            });
         }
 
         static Vector2[] TILE_VERTICES = new Vector2[] {

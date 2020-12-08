@@ -1,9 +1,11 @@
 {
     "name": "Acorn.Editor",
     "references": [
-        "GUID:ee351b7d5093f594784f8e97e88f6af4"
+        "Acorn"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

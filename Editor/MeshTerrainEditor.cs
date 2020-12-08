@@ -66,7 +66,7 @@ namespace Acorn {
             var pos = terrain.transform.InverseTransformPoint(GetMousePosOnPlane(plane));
             var hex = Hex.FromPlanar(pos, terrain.settings.radius);
             var offset = hex.ToOffset();
-            if (!terrain.buffer.Contains(offset.x, offset.y)) {
+            if (!terrain.buffer.IsWithinBounds(offset.x, offset.y)) {
                 return;
             }
             brushPos = hex;
